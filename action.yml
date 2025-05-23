@@ -1,0 +1,14 @@
+name: "Greet User (Composite)"
+description: "Greets the user by name"
+inputs:
+  name:
+    description: 'Name of the person to greet'
+    required: true
+outputs:
+  greeting:
+    description: "The greeting message"
+runs:
+  using: "composite"
+  steps:
+    - run: echo "greeting=Hello, ${{ inputs.name }}! 👋" >> $GITHUB_OUTPUT
+      shell: bash
