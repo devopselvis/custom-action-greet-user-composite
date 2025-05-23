@@ -25,4 +25,4 @@ jobs:
 
       - name: Output the Greeting
         run: |
-          echo "${{ steps.create-greeting.output.greeting }}"
+          echo "${{ steps.create-greeting.outputs.greeting }}"
