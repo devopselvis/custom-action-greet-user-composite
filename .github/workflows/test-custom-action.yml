@@ -17,7 +17,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Greet User
+      - name: Create Greating
+        id: create-greeting
         uses: devopselvis/custom-action-greet-user-composite@main
         with:
           name: Elvis
+
+      - name: Output the Greeting
+        run: |
+          echo "${{ steps.create-greeting.output.greeting }}"
